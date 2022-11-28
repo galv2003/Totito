@@ -1,3 +1,8 @@
+// * Al iniciar, se pide los nombres de ambos jugadores y asigna aleatoriamente los símbolos ("X" y "O")
+// * El jugador a quien le tocó la "X" es el que tira de primero
+// * Dado que el tablero de Totito solo tiene nueve casillas, los tiros deben leerse del usuario utilizando los números 
+//      del 1 al 9 (Es decir que el usuario va a ingresar un número del 1 al 9 para indicar en qué casilla quiere tirar
+
 import java.io.*;
 import java.lang.Math;
 public class Totito {
@@ -38,35 +43,51 @@ public class Totito {
                 System.out.println("Es el turno de " + player1);
                 turno1 = Integer.parseInt(input.readLine());
                 conversor1 = turno1 - 1;
-                if ((Juego[conversor1].equals("O")) || (conversor1 > 9)) {
-                    System.out.println("Opción invalida");
+                if ((turno1 <= 9) || (turno1 > 0)){
+                    if (Juego[conversor1].equals("O") || Juego[conversor1].equals("X")) {
+                        System.out.println("Opción invalida");
+                    } else {
+                        Juego[conversor1] = "X";
+                    }
                 } else {
-                    Juego[conversor1] = "X";
+                    System.out.println("Opción invalida");
                 }
                 System.out.println("Es el turno de " + player2);
                 turno2 = Integer.parseInt(input.readLine());
                 conversor2 = turno2 - 1;
-                if ((Juego[conversor2].equals("X")) || (conversor2 > 9)) {
-                    System.out.println("Opción invalida");
+                if ((turno2 <= 9) || (turno2 > 0)){
+                    if (Juego[conversor2].equals("O") || Juego[conversor2].equals("X")) {
+                        System.out.println("Opción invalida");
+                    } else {
+                        Juego[conversor2] = "O";
+                    }
                 } else {
-                    Juego[conversor2] = "O";
+                    System.out.println("Opción invalida");
                 }
             } else if (sim2.equals("X")) {
                 System.out.println("Es el turno de " + player2);
                 turno1 = Integer.parseInt(input.readLine());
                 conversor1 = turno1 - 1;
-                if ((Juego[conversor1].equals("O")) || (conversor1 > 9)) {
-                    System.out.println("Opción invalida");
+                if ((turno1 <= 9) || (turno1 > 0)){
+                    if (Juego[conversor1].equals("O") || Juego[conversor1].equals("X")) {
+                        System.out.println("Opción invalida");
+                    } else {
+                        Juego[conversor1] = "X";
+                    }
                 } else {
-                    Juego[conversor1] = "X";
+                    System.out.println("Opción invalida");
                 }
                 System.out.println("Es el turno de " + player1);
                 turno2 = Integer.parseInt(input.readLine());
                 conversor2 = turno2 - 1;
-                if ((Juego[conversor2].equals("X")) || (conversor2 > 9)) {
-                    System.out.println("Opción invalida");
+                if ((turno2 <= 9) || (turno2 > 0)){
+                    if (Juego[conversor2].equals("O") || Juego[conversor2].equals("X")) {
+                        System.out.println("Opción invalida");
+                    } else {
+                        Juego[conversor2] = "O";
+                    }
                 } else {
-                    Juego[conversor2] = "O";
+                    System.out.println("Opción invalida");
                 }
             }
             if ((Juego[0].equals("X") && Juego[1].equals("X") && Juego[2].equals("X")) || (Juego[3].equals("X") && Juego[4].equals("X") && Juego[5].equals("X")) || (Juego[6].equals("X") && Juego[7].equals("X") && Juego[8].equals("X")) || (Juego[0].equals("X") && Juego[3].equals("X") && Juego[6].equals("X")) || (Juego[1].equals("X") && Juego[4].equals("X") && Juego[7].equals("X")) || (Juego[2].equals("X") && Juego[5].equals("X") && Juego[8].equals("X")) || (Juego[0].equals("X") && Juego[4].equals("X") && Juego[8].equals("X")) || (Juego[2].equals("X") && Juego[4].equals("X") && Juego[6].equals("X"))) {
